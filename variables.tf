@@ -1,6 +1,6 @@
-variable "vultr_api_key" {
+variable "do_token" {
   type        = string
-  description = "API to work with Vultr Provider"
+  description = "API to work with Provider"
   sensitive   = true # Hide sensitive info
 }
 
