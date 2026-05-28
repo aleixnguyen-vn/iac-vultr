@@ -24,6 +24,7 @@ resource "digitalocean_droplet" "cluster" {
     weekday = "MON"
     hour    = 8
   }
+  ssh_keys = [56521079]
 }
 
 # Display Droplet's IP after deploy
