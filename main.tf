@@ -15,9 +15,9 @@ provider "digitalocean" {
 # Deploy a new Droplet on DO
 resource "digitalocean_droplet" "cluster" {
   image  = "ubuntu-24-04-x64"
-  name   = "k8s lab"
+  name   = "k8s-lab"
   region = "sgp1"              # sgp1 aka Singapore
-  size   = "s-2vcpu-8gb"
+  size   = "s-2vcpu-4gb"
   backups = true
   backup_policy {
     plan    = "weekly"
