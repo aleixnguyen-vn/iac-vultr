@@ -13,11 +13,11 @@ provider "digitalocean" {
 }
 
 # Deploy a new Droplet on DO
-resource "digitalocean_droplet" "web_server" {
-  image  = "ubuntu-22-04-x64"
-  name   = "project-1d-wpfpm"
+resource "digitalocean_droplet" "cluster" {
+  image  = "ubuntu-24-04-x64"
+  name   = "k8s lab"
   region = "sgp1"              # sgp1 aka Singapore
-  size   = "s-1vcpu-1gb"       # smallest droplet
+  size   = "s-2vcpu-8gb"
   backups = true
   backup_policy {
     plan    = "weekly"
@@ -28,5 +28,5 @@ resource "digitalocean_droplet" "web_server" {
 
 # Display Droplet's IP after deploy
 output "do_droplet_ip" {
-    value = digitalocean_droplet.web_server.ipv4_address
+    value = digitalocean_droplet.cluster.ipv4_address
 }
